@@ -10,7 +10,7 @@ import com.alibaba.android.vlayout.DelegateAdapter
 import com.finddreams.stockpircepage.R
 import com.finddreams.stockpircepage.databinding.ActivityStockpriceLayoutBinding
 import com.finddreams.stockpircepage.model.StockItem
-import com.finddreams.stockpircepage.vlayout.adapter.BottomFundFlowAdapter
+import com.finddreams.stockpircepage.vlayout.adapter.BottomFundAnalysisAdapter
 import com.finddreams.stockpircepage.vlayout.adapter.BottomListAdapter
 import com.finddreams.stockpircepage.vlayout.adapter.TopPriceInfoAdapter
 import com.finddreams.stockpircepage.vlayout.adapter.TradeAdapter
@@ -70,8 +70,8 @@ class StockPriceVLayoutActivity : ComponentActivity() {
                     ViewTypeBuSellPan
                 )
             )
-            val bottomFundFlowAdapter = BottomFundFlowAdapter(this)
-            mAdapters.add(bottomFundFlowAdapter)
+            val bottomFundAnalysisAdapter = BottomFundAnalysisAdapter(this)
+            mAdapters.add(bottomFundAnalysisAdapter)
         }
         //设置适配器
         delegateAdapter.setAdapters(mAdapters)

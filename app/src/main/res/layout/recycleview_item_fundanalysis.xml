@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:text="资金流向"
+        android:text="资金分析"
         android:textColor="@color/black"
         android:textSize="25sp" />
         <TextView

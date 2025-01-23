@@ -7,10 +7,10 @@ import com.finddreams.stockpircepage.R
 import com.finddreams.stockpircepage.model.StockItem
 import com.finddreams.stockpircepage.vlayout.ViewTypeBottomFundFlow
 
-class BottomFundFlowAdapter(context: Context) : BaseDelegateAdapter(
+class BottomFundAnalysisAdapter(context: Context) : BaseDelegateAdapter(
     context,
     LinearLayoutHelper(),
-    R.layout.recycleview_item_fundflow,
+    R.layout.recycleview_item_fundanalysis,
     1,
     ViewTypeBottomFundFlow
 ) {
