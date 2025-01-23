@@ -55,14 +55,14 @@ fun ContentView(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     Column(modifier = modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
         Button(onClick = {
-            StockPriceVLayoutActivity.startActivity(context,"恒生指数")
+            StockPriceVLayoutActivity.startActivity(context,"000000")
         }) {
             Text(
                 text = "指数类型"
             )
         }
         Button(onClick = {
-            StockPriceVLayoutActivity.startActivity(context,"腾讯控股")
+            StockPriceVLayoutActivity.startActivity(context,"00700")
         }) {
             Text(
                 text = "股票类型"

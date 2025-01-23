@@ -2,21 +2,17 @@ package com.finddreams.stockpircepage.vlayout.adapter
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
-import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.content.Context
-import android.util.Log
-import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import android.widget.TextView
 import com.alibaba.android.vlayout.layout.LinearLayoutHelper
 import com.finddreams.stockpircepage.R
-import com.finddreams.stockpircepage.model.StockItem
 import com.finddreams.stockpircepage.vlayout.ViewTypeBottomList
-import kotlin.time.Duration
 
-class TopPriceInfoAdapter(val context: Context) : BaseDelegateAdapter(
+class TopPriceInfoAdapter(val context: Context, val code: String) : BaseDelegateAdapter(
     context,
     LinearLayoutHelper(),
     R.layout.recycleview_item_price,
@@ -31,6 +27,25 @@ class TopPriceInfoAdapter(val context: Context) : BaseDelegateAdapter(
         val ll_price = holder.getView<LinearLayout>(R.id.ll_price)
         val rl_expand = holder.getView<RelativeLayout>(R.id.rl_expand)
         val iv_arrow = holder.getView<ImageView>(R.id.iv_arrow)
+        val tv_xj = holder.getView<TextView>(R.id.tv_xj)
+        val tv_zdl = holder.getView<TextView>(R.id.tv_zdl)
+        val tv_zdf = holder.getView<TextView>(R.id.tv_zdf)
+        setListeners(ll_price, iv_arrow, rl_expand)
+        if(code=="000000"){
+            tv_xj?.text="19700.56"
+            tv_zdl?.text="-78.21"
+            tv_zdf?.text="-0.40%"
+            tv_xj?.setTextColor(context.resources.getColor(R.color.jyb_base_color_green))
+            tv_zdl?.setTextColor(context.resources.getColor(R.color.jyb_base_color_green))
+            tv_zdf?.setTextColor(context.resources.getColor(R.color.jyb_base_color_green))
+        }
+    }
+
+    private fun setListeners(
+        ll_price: LinearLayout?,
+        iv_arrow: ImageView?,
+        rl_expand: RelativeLayout?
+    ) {
         ll_price?.setOnClickListener {
             iv_arrow?.rotation = if (iv_arrow?.rotation == 0f) {
                 180f
@@ -71,8 +86,6 @@ class TopPriceInfoAdapter(val context: Context) : BaseDelegateAdapter(
                 animator.start()
             }
         }
-
-
     }
 
     // dp 转 px 的辅助方法
