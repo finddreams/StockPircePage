@@ -35,16 +35,11 @@ class StockPriceVLayoutActivity : ComponentActivity() {
         setContentView(R.layout.activity_stockprice_layout)
         mBinding = ActivityStockpriceLayoutBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
-        intent.getStringExtra("code")?.let {
-            code = it
-            mBinding.topTitle.tvStockName.text = if (code=="000000") "恒生指数" else "腾讯控股"
-            isIndex = it=="000000"
-        }
+        getIntentData()
         val vlayoutUtils = VLayoutUtils()
-
         val delegateAdapter: DelegateAdapter =
             vlayoutUtils.initRecyclerView(mBinding.recycleView, this)
-        val topPriceInfoAdapter = TopPriceInfoAdapter(this,code)
+        val topPriceInfoAdapter = TopPriceInfoAdapter(this, code)
         mAdapters.add(topPriceInfoAdapter)
         mAdapters.add(
             vlayoutUtils.initLineLayoutAdapter(
@@ -80,6 +75,14 @@ class StockPriceVLayoutActivity : ComponentActivity() {
                 delay(5000L)
                 bottomListAdapter?.update(itemList)
             }
+        }
+    }
+
+    private fun getIntentData() {
+        intent.getStringExtra("code")?.let {
+            code = it
+            mBinding.topTitle.tvStockName.text = if (code == "000000") "恒生指数" else "腾讯控股"
+            isIndex = it == "000000"
         }
     }
 
