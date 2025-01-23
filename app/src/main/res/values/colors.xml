@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--   58a511 绿色 (红涨绿跌)  - - - - - - - - - - - - -    -->
+    <color name="jyb_base_color_green">#16BA70</color>
+    <color name="jyb_base_color_greenB3">#B316BA70</color>
+    <color name="jyb_base_color_green_70">#B358a511</color>
+
+    <!--   ed4e46 红色 (红涨绿跌 或者是按钮 )  - - - - - - - - - - - - -    -->
+    <color name="jyb_base_color_red">#F54346</color>
+    <color name="jyb_base_color_B3red">#B3F54346</color>
+    <color name="jyb_base_color_red_70">#B3ed4e46</color>
+    <color name="jyb_base_color_divide">#e5e5e5</color>
+    <color name="jyb_base_color_space">#eeeeee</color>
+</resources>

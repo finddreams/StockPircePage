@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="24dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="50dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_xj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="387.400"
+            android:textColor="@color/jyb_base_color_red"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_zdl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="7dp"
+            android:layout_toEndOf="@id/tv_xj"
+            android:maxLines="1"
+            android:text="+15.00"
+            android:textColor="@color/jyb_base_color_red"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tv_zdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="7dp"
+            android:layout_toEndOf="@id/tv_zdl"
+            android:maxLines="1"
+            android:text="+10.07%"
+            android:textColor="@color/jyb_base_color_red"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_arrow"
+        android:layout_width="18dp"
+        android:layout_height="10dp"
+        android:layout_below="@id/ll_price"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/expand_arrow_down" />
+
+    <RelativeLayout
+        android:id="@+id/rl_expand"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/iv_arrow"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="更多盘口信息" />
+    </RelativeLayout>
+
+    <include
+        android:layout_below="@id/rl_expand"
+        layout="@layout/layout_space_view"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_marginTop="10dp" />
+</RelativeLayout>
