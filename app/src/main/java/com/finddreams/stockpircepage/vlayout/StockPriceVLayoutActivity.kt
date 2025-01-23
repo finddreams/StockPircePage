@@ -54,7 +54,7 @@ class StockPriceVLayoutActivity : ComponentActivity() {
             mAdapters.add(vlayoutUtils.initStickTopAdapter(this))
             bottomListAdapter = BottomListAdapter(this)
             mAdapters.add(bottomListAdapter!!)
-            bottomListAdapter?.update(itemList)
+            updateBottomList()
         } else {
             val tradeAdapter = TradeAdapter(this)
             mAdapters.add(tradeAdapter)
@@ -73,9 +73,15 @@ class StockPriceVLayoutActivity : ComponentActivity() {
         lifecycleScope.launch {
             while (true) {
                 delay(5000L)
-                bottomListAdapter?.update(itemList)
+                val random = Math.random()
+                itemList = List(1200) { StockItem("腾讯控股 $it $random") }
+                updateBottomList()
             }
         }
+    }
+
+    private fun updateBottomList() {
+        bottomListAdapter?.update(itemList)
     }
 
     private fun getIntentData() {

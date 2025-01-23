@@ -29,7 +29,8 @@ class BottomListAdapter(context: Context) : BaseDelegateAdapter(
         if (itemList != null) {
             this.itemList = itemList
             mCount = itemList.size
-            notifyDataSetChanged()
+//            notifyDataSetChanged()//会更新其他的Adapter
+            notifyItemRangeChanged(0,mCount)
         }
         Log.i(TAG, "update: ...")
     }
