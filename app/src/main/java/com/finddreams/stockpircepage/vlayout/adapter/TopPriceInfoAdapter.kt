@@ -98,4 +98,10 @@ class TopPriceInfoAdapter(val context: Context, val code: String) : BaseDelegate
         val density = context.resources.displayMetrics.density
         return (dp * density).toInt()
     }
+
+    fun update() {
+//            notifyDataSetChanged()//会更新其他的Adapter
+        notifyItemChanged(0)
+        Log.i(TAG, "update: ...")
+    }
 }
